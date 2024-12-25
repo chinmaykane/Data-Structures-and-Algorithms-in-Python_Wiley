@@ -6,8 +6,10 @@ product is odd'''
 def odd_product(input):
     isodd = False
     seq = input.split(',')
-    for i,r in seq:
-        if (i*r)%2 !=0:
-            isodd = True
+    for i in seq:
+        for r in range(len(seq)):
+            if (int(i)*int(seq[r]))%2 !=0 and int(i)!=int(r):
+                isodd = True
     return isodd
+
 print(odd_product('3,4,5,6,7,8'))
